@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./head');%>
+<body>
+    <%- include('./layout');%>
+    <h1><%= title%></h1>
+    <ul>
+        <%book_list.forEach(book => {%>
+            <li>
+                <a href={book.url}>
+                    <%=book.title%>
+                </a>
+                    <%=book.author.name%>
+            </li>
+        <%});%>
+    </ul>
+</body>
+</html>
