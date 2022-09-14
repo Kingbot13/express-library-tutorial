@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./head'); %>    
+<body>
+    <%-include('./layout');%>
+    <h1><%=title%></h1>
+    <ul>
+        <% bookinstance_list.forEach(item => {%>
+            <li>
+                <a href="<%=item.url%>"><%=item.book.title%> : <%=item.imprint%> -
+                    <% if (item.status === 'Available') {%>
+                        <span class="text-success"><%=item.status%></span>
+                    <%} else if (item.status === 'Maintenance') { %>
+                        <span class="text-danger"><%=item.status%></span>
+                    <%} else {%>
+                        <span class="text-warning"><%= item.status%></span>
+                    <%}%>
+                    <% if (item.status !== 'Available'){%>
+                        <span>Due: <%=item.due_back%></span>
+                    <%} %> 
+                </a>
+            </li>
+        <%});%>
+    </ul>
+</body>
+</html>
