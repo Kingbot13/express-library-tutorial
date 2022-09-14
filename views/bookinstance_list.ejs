@@ -16,7 +16,7 @@
                         <span class="text-warning"><%= item.status%></span>
                     <%}%>
                     <% if (item.status !== 'Available'){%>
-                        <span>Due: <%=item.due_back%></span>
+                        <span>Due: <%=item.due_back_formatted%></span>
                     <%} %> 
                 </a>
             </li>

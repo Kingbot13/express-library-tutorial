@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./head'); %>
+<body>
+    <%- include('layout'); %>
+    <h1><%= title%></h1>
+    <ul>
+        <% author_list.forEach(item => {%>
+            <li>
+                <a href="<%= item.url %> "><%= item.name %> </a> (<%= item.date_of_birth %> - <%= item.date_of_death %>)  
+            </li>
+       <% }); %>
+    </ul>
+</body>
+</html>
