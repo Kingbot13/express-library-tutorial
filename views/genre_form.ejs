@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./head'); %>
+<body>
+    <%- include('./layout'); %>
+    <h1><%=title%></h1>
+    <form action="" method="post">
+        <div class="form-group">
+            <label for="name"></label>
+            <input class="form-control" id="name" type="text" placeholder="Fantasy, Poetry, etc" name="name" value="<%= undefined === genre ? "" : genre.name%>" />
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </div>
+    </form>
+    <% if (errors) { %>
+        <ul>
+            <% errors.forEach(error => { %>
+                <li><%=error.msg%></li>
+            <% })%>
+        </ul>
+    <%}%>
+</body>
+</html>
