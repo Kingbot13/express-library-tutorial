@@ -7,7 +7,7 @@
     <ul>
         <%book_list.forEach(book => {%>
             <li>
-                <a href={book.url}>
+                <a href="<%= book.url%>">
                     <%=book.title%>
                 </a>
                     <%=book.author.name%>
